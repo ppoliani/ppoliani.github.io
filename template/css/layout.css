@@ -953,6 +953,16 @@
 	text-transform: uppercase;
 }
 
+.resume-item li ul {
+  list-style: circle;
+  padding-left: 2rem;
+}
+
+.resume-item > ul {
+  list-style: disc;
+  padding-left: 1rem;
+}
+
 .resume-items .resume-item p {
 	margin: 0;
 }
