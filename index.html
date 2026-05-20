@@ -1,936 +1,684 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<!--
-		Basic
-	-->
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<title>Pavlos Polianidis</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="description" content="Pavlos Polianidis vCard & Resume" />
-	<meta name="keywords" content="vcard, resposnive, resume, personal, card, cv, cards, portfolio" />
-	<meta name="author" content="beshleyua" />
-	
-	<!--
-		Load Fonts
-	-->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-	
-	<!--
-		Load CSS
-	-->
-	<link rel="stylesheet" href="css/basic.css" />
-	<link rel="stylesheet" href="css/layout.css" />
-	<link rel="stylesheet" href="css/blogs.css" />
-	<link rel="stylesheet" href="css/ionicons.css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" />
-	
-	<!--
-		Template Colors
-	-->
-  <link rel="stylesheet" href="css/template-colors/green.css" />
-  <link rel="stylesheet" href="css/template-dark/dark.css" />
-  <link rel="stylesheet" href="css/template-colors/copper.css" />
-  <!-- <link rel="stylesheet" href="css/template-colors/blue.css" /> -->
-	<!--<link rel="stylesheet" href="css/template-colors/orange.css" />-->
-	<!-- <link rel="stylesheet" href="css/template-colors/pink.css" /> -->
-	<!-- <link rel="stylesheet" href="css/template-colors/purple.css" /> -->
-	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
-	
-	<!--[if lt IE 9]>
-	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
-	<!--
-		Favicons
-	-->
-	<link rel="shortcut icon" href="images/favicons/favicon.ico">
-	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavlos Polianidis — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0f172a;
+      --navy2:  #1e293b;
+      --amber:  #f59e0b;
+      --amber2: #fbbf24;
+      --white:  #ffffff;
+      --gray50: #f8fafc;
+      --gray100:#f1f5f9;
+      --gray300:#cbd5e1;
+      --gray400:#94a3b8;
+      --gray600:#475569;
+      --gray700:#334155;
+      --gray900:#0f172a;
+      --sidebar-w: 270px;
+    }
+
+    html { font-size: 14px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--gray100);
+      color: var(--gray900);
+      line-height: 1.6;
+    }
+
+    /* ── Outer wrapper ───────────────────────────── */
+    .page {
+      max-width: 1060px;
+      margin: 32px auto;
+      background: var(--white);
+      box-shadow: 0 4px 40px rgba(0,0,0,.15);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ─────────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-w);
+      min-width: var(--sidebar-w);
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sidebar-header {
+      background: var(--navy2);
+      padding: 36px 24px 28px;
+      text-align: center;
+      border-bottom: 3px solid var(--amber);
+    }
+
+    .sidebar-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .sidebar-header h1 span {
+      color: var(--amber);
+    }
+
+    .sidebar-header .title {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber2);
+    }
+
+    .sidebar-section {
+      padding: 22px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .sidebar-section:last-child { border-bottom: none; }
+
+    .sidebar-section h3 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 14px;
+    }
+
+    /* Contact */
+    .contact-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8rem; color: var(--gray300); }
+    .contact-list li .icon { font-size: 0.85rem; margin-top: 1px; flex-shrink: 0; width: 16px; text-align: center; }
+    .contact-list a { color: var(--gray300); text-decoration: none; }
+    .contact-list a:hover { color: var(--amber2); }
+
+    /* Skills */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group h4 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--amber2);
+      margin-bottom: 5px;
+      letter-spacing: 0.05em;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .skill-tags span {
+      background: rgba(255,255,255,0.08);
+      color: var(--gray300);
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    /* Education */
+    .edu-item { margin-bottom: 14px; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-item .degree { font-size: 0.78rem; font-weight: 600; color: var(--white); line-height: 1.3; }
+    .edu-item .school { font-size: 0.73rem; color: var(--amber2); margin-top: 2px; }
+    .edu-item .year { font-size: 0.7rem; color: var(--gray400); margin-top: 1px; }
+
+    /* ── Main content ─────────────────────────────── */
+    .main {
+      flex: 1;
+      padding: 40px 44px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Section header */
+    .section-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+
+    .section-rule {
+      height: 2px;
+      background: linear-gradient(to right, var(--amber), transparent);
+      margin-bottom: 20px;
+    }
+
+    /* Summary */
+    .summary p {
+      font-size: 0.88rem;
+      color: var(--gray600);
+      line-height: 1.75;
+    }
+
+    /* Experience */
+    .experience { display: flex; flex-direction: column; gap: 24px; }
+
+    .job {
+      display: flex;
+      gap: 16px;
+    }
+
+    .job-timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 12px;
+    }
+
+    .job-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .job-dot.small {
+      width: 7px;
+      height: 7px;
+      background: var(--gray300);
+      margin-top: 5px;
+    }
+
+    .job-line {
+      width: 1px;
+      flex: 1;
+      background: var(--gray300);
+      margin-top: 4px;
+    }
+
+    .job-content { flex: 1; padding-bottom: 4px; }
+
+    .job-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px; margin-bottom: 2px; }
+
+    .job-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .job-period {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--amber);
+      white-space: nowrap;
+      background: #fef3c7;
+      padding: 1px 8px;
+      border-radius: 99px;
+    }
+
+    .job-company {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray600);
+      margin-bottom: 8px;
+    }
+
+    .job-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .job-bullets li {
+      font-size: 0.8rem;
+      color: var(--gray700);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .job-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: 0.7rem;
+      top: 2px;
+    }
+
+    .job-stack {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      color: var(--gray400);
+    }
+
+    .job-stack strong {
+      color: var(--gray600);
+      font-weight: 600;
+    }
+
+    /* ── Print styles ─────────────────────────────── */
+    @media print {
+      @page { margin: 0; size: A4; }
+      body { background: white; }
+      .page {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        min-height: auto;
+      }
+      .job-period { background: none; padding: 0; color: var(--amber); }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    /* ── Screen-only print button ─────────────────── */
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25);
+      transition: background 0.15s;
+    }
+    .print-btn:hover { background: var(--amber); color: var(--navy); }
+    @media print { .print-btn { display: none; } }
+  </style>
 </head>
-
 <body>
-	<div class="page">
-		
-		<!-- preloader -->
-		<div class="preloader">
-			<div class="centrize full-width">
-				<div class="vertical-center">
-					<div class="spinner">
-						<div class="double-bounce1"></div>
-						<div class="double-bounce2"></div>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<!-- background -->
-		<div class="background"></div>
+<button class="print-btn" onclick="window.print()">Save as PDF</button>
 
-		<!--
-			Container
-		-->
-		<div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+<div class="page">
 
-			<!--
-				Header
-			-->
-			<header class="header">
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside class="sidebar">
 
-				<!-- menu -->
-				<div class="top-menu">
-					<ul>
-						<li class="active">
-							<a href="#about-card">
-								<span class="icon ion-person"></span>
-								<span class="link">About</span>
-							</a>
-						</li>
-						<li>
-							<a href="#resume-card">
-								<span class="icon ion-android-list"></span>
-								<span class="link">Resume</span>
-							</a>
-						</li>
-						<li>
-							<a href="#contacts-card">
-								<span class="icon ion-at"></span>
-								<span class="link">Contact</span>
-							</a>
-						</li>
-					</ul>
-				</div>
+    <div class="sidebar-header">
+      <h1>Pavlos<br><span>Polianidis</span></h1>
+      <div class="title">CTO &amp; Blockchain Engineer</div>
+    </div>
 
-			</header>
+    <div class="sidebar-section">
+      <h3>Contact</h3>
+      <ul class="contact-list">
+        <li><span class="icon">✉</span><a href="mailto:ppoliani@gmail.com">ppoliani@gmail.com</a></li>
+        <!--<li><span class="icon">☏</span>+30 694 688 9318</li>-->
+        <li><span class="icon">⌂</span><a href="https://ppoliani.github.io/" target="_blank">ppoliani.github.io</a></li>
+        <li><span class="icon">⌂</span><a href="https://apocentre.com" target="_blank">apocentre.com</a></li>
+        <li><span class="icon">⌥</span><a href="https://github.com/ppoliani" target="_blank">github.com/ppoliani</a></li>
+        <li><span class="icon">⌥</span><a href="https://github.com/Apocentre" target="_blank">github.com/Apocentre</a></li>
+      </ul>
+    </div>
 
-			<!--
-				Card - Started
-			-->
-			<div class="card-started" id="home-card">
+    <div class="sidebar-section">
+      <h3>Technical Skills</h3>
 
-				<!--
-					Profile
-				-->
-				<div class="profile">
-
-					<!-- profile image -->
-					<div class="slide" style="background-image: url(images/coincierge_bg.jpg);"></div>
-
-					<!-- profile photo -->
-					<div class="image">
-						<img src="images/ppoliani.png" alt="" />
-					</div>
-
-					<!-- profile titles -->
-					<div class="title">Pavlos Polianidis</div>
-					<div class="subtitle">Co-Founder and CTO at Coincierge.io</div>
-
-					<!-- profile socials -->
-					<div class="social">
-						<a target="_blank" href="https://twitter.com/ppoliani"><span class="fab fa-twitter"></span></a>
-						<a target="_blank" href="https://github.com/ppoliani"><span class="fab fa-github"></span></a>
-						<a target="_blank" href="https://www.linkedin.com/in/pavlos-polianidis-4324b647/"><span class="fab fa-linkedin"></span></a>
-						<a target="_blank" href="https://stackoverflow.com/users/314975/pavlos"><span class="fab fa-stack-overflow"></span></a>
-					</div>
-					<!-- profile buttons -->
-					<div class="lnks">
-						<a href="https://drive.google.com/file/d/1dGNrft6ejC1Gbq1BWcsbzwt54WVVOCIE/view?usp=sharing" target="_blank" class="lnk">
-							<span class="text">Download CV</span>
-							<span class="ion ion-archive"></span>
-						</a>
-						<a href="#" class="lnk discover">
-							<span class="text">Contact Me</span>
-							<span class="arrow"></span>
-						</a>
-					</div>
-
-				</div>
-
-			</div>
-
-			<!-- 
-				Card - About
-			-->
-			<div class="card-inner animated active" id="about-card">
-				<div class="card-wrap">
-
-					<!-- 
-						About 
-					-->
-					<div class="content about">
-
-						<!-- title -->
-						<div class="title">About Me</div>
-
-						<!-- content -->
-						<div class="row">
-							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
-								<div class="text-box">
-									<p>
-										Pavlos is a technology lead and a blockchain enthusiast who has worked for various companies across several industries including, Sky UK, Lloyds Bank, and Deutsche Bank. He has been involved in the design and implementation of various web-based and blockchain systems and worked with diversified technology stacks.
-                  </p>
-                  <p>
-                    His main focus and interest are around the decentralized ledger technologies varying from low-level cryptographic structures, chain implementation details, cross-chain communication protocols, to authoring smart contract across various platforms. He has successfully advised and engaged in several blockchain projects and helped various teams to design and build products around the DLT technologies
-                  </p>
-								</div>
-								<div class="info-list">
-									<ul>
-										<li><strong>Age . . . . .</strong> 30</li>
-										<li><strong>Residence . . . . .</strong> UK</li>
-										<li><strong>Consultancy . . . . .</strong> Available</li>
-										<li><strong>Address . . . . .</strong> London, UK</li>
-									</ul>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-
-					</div>
-
-					<!--
-						Services
-					-->
-					<div class="content services">
-
-						<!-- title -->
-						<div class="title">My Services</div>
-
-						<!-- content -->
-						<div class="row service-items border-line-v">
-
-              <!-- service item -->
-              <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-								<div class="service-item">
-									<div class="icon"><span class="fas fa-hands-helping"></span></div>
-									<div class="name">Blockchain Consultancy</div>
-									<p>
-                    Through my involvement in various blockchain projects, I can assist you by making sure your idea has a viable
-                    potential to become a leading solutions within the domain of your expertise. 
-									</p>
-								</div>
-              </div>
-              <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-								<div class="service-item">
-									<div class="icon"><span class="fab fa-ethereum"></span></div>
-									<div class="name">Smart Contract Engineering</div>
-									<p>
-                    Smart Contracts are the future of decentralized piece of code that will bring innovation and disrupt
-                    to multiple sectors. Extensive experience can help me guide you though the journey to this new era of 
-                    technology.
-									</p>
-								</div>
-							</div>
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-								<div class="service-item">
-									<div class="icon"><span class="fab fa-internet-explorer"></span></div>
-									<div class="name">Architecture of web-based systems</div>
-									<p>
-										Modern approach to architecture and building modular web-based systems.
-									</p>
-								</div>
-              </div>
-              <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
-								<div class="service-item">
-									<div class="icon"><span class="fas fa-code"></span></div>
-									<div class="name">Senior Software Engineer</div>
-									<p>
-                    I have have worked for various companies across several industries including, Sky UK, Lloyds Bank, 
-                    and Deutsche Bank and was involved in the design and implementation of various web-based 
-                    and blockchain systems utilizing diversified technology stacks.
-									</p>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
-
-					</div>
-					<div class="content clients">
-
-						<!-- title -->
-						<div class="title">Clients</div>
-
-						<!-- content -->
-						<div class="row client-items">
-
-							<!-- client item -->
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://www.db.com/company/index.htm">
-											<img src="images/clients/db.jpg" alt="" />
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<!-- client item -->
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://www.lloydsbank.com/">
-											<img src="images/clients/lloyds.png" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://www.sky.com/">
-											<img src="images/clients/sky.png" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://buildit.wiprodigital.com/">
-											<img src="images/clients/builtit.png" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-              
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-                <div class="client-item">
-                  <div class="image">
-                    <a target="_blank" href="https://coincierge.io/">
-                      <img src="images/clients/coincierge.png" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-                <div class="client-item">
-                  <div class="image">
-                    <a target="_blank" href="https://earthrewards.net/">
-                      <img src="images/clients/er.png" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-							<div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://www.ept.gi/">
-											<img src="images/clients/evident-proof.png" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-              
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://ecoingot.com/">
-											<img src="images/clients/ecoingot.jpeg" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://www.varius.io/">
-											<img src="images/clients/varius.png" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-								<div class="client-item">
-									<div class="image">
-										<a target="_blank" href="https://www.footballradar.com/">
-											<img src="images/clients/footballradar.png" alt="" />
-										</a>
-									</div>
-								</div>
-              </div>
-
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-                <div class="client-item">
-                  <div class="image">
-                    <a target="_blank" href="https://www.ascentialedge.com/">
-                      <img src="images/clients/bv.jpg" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col col-d-3 col-t-3 col-m-6 border-line-v">
-                <div class="client-item">
-                  <div class="image">
-                    <a target="_blank" href="https://cirruslogistics.com/">
-                      <img src="images/clients/cirrus.svg" alt="" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-					</div>
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="skill-tags">
+          <span>Rust</span><span>Go</span><span>TypeScript</span><span>JavaScript</span>
+          <span>Solidity</span><span>Move</span><span>Python</span><span>Scala</span>
+          <span>F#</span><span>OCaml</span><span>C#</span><span>Elm</span>
         </div>
       </div>
-			</div>
 
-			<!--
-				Card - Resume
-			-->
-			<div class="card-inner" id="resume-card">
-				<div class="card-wrap">
+      <div class="skill-group">
+        <h4>Blockchain &amp; Web3</h4>
+        <div class="skill-tags">
+          <span>Ethereum</span><span>Solana</span><span>Sui</span><span>Aptos</span>
+          <span>Cosmos SDK</span><span>Polkadot</span><span>Substrate</span>
+          <span>Near</span><span>Bitcoin</span><span>Tezos</span>
+          <span>Hyperledger</span><span>ERC-20/721</span>
+        </div>
+      </div>
 
-					<!--
-						Resume
-					-->
-					<div class="content resume">
+      <div class="skill-group">
+        <h4>Cryptography</h4>
+        <div class="skill-tags">
+          <span>FHE</span><span>ZK Proofs</span><span>ZK Rollups</span>
+          <span>Circom</span><span>ZoKrates</span><span>MPC</span><span>DKG</span>
+          <span>Shamir SS</span><span>Merkle Trees</span><span>ECDSA</span>
+          <span>OAuth 2.0</span><span>OIDC</span><span>JWT</span>
+        </div>
+      </div>
 
-						<!-- title -->
-						<div class="title">Resume</div>
+      <div class="skill-group">
+        <h4>Back-End</h4>
+        <div class="skill-tags">
+          <span>Actix-web</span><span>Axum</span><span>Gin</span>
+          <span>Node.js</span><span>Express</span><span>RabbitMQ</span><span>Kafka</span>
+          <span>PostgreSQL</span><span>Redis</span><span>SQLx</span><span>MongoDB</span>
+        </div>
+      </div>
 
-						<!-- content -->
-						<div class="row">
+      <div class="skill-group">
+        <h4>Front-End</h4>
+        <div class="skill-tags">
+          <span>React</span><span>Redux</span><span>SolidJS</span>
+          <span>React Native</span><span>Angular</span><span>RxJS</span>
+          <span>WebSocket</span><span>HTML5</span><span>CSS3</span>
+        </div>
+      </div>
 
-							<!-- experience -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="ion ion-briefcase"></i></div>
-									<div class="name">Experience</div>
-								</div>
-								<div class="resume-items">
-                    <div class="resume-item border-line-h active">
-                        <div class="date">2019(Jan) - Present</div>
-                        <div class="name">CTO</div>
-                        <div class="company">Earth Rewards, London UK</div>
-                          <ul>
-                            <li>
-                                Fully responsible for building a blockchain based system that consists of several back-end services, a few web applications and a mobile App.
-                            </li>
-                            <li>Designed a loyalty based platform that allows users receive blockchain tokens for their environmental efforts.</li>
-                            <li>Manage a team of software engineers and organize the tasks to be delivered during each sprint.</li>
-                            <li>Designed and implemented the smart contracts that manage the lifecycle of the earth rewards loyalty tokens.</li>
-                            <li>Designed a solution to integrate the earth rewards loyalty platform to existing software solutions.</li>
-                            <li>Created a custom wallet to manage the on-chain loyalty tokens.</li>
-                            <li>
-                                Amongst other the following technologies were used:
-                              <ul>
-                                <li>Ethereum blockchain and smart contracts in Solidity</li>
-                                <li>Web3JS</li>
-                                <li>Custom OpenId Connect server</li>
-                                <li>Hyperledger Besu</li>
-                                <li>Stellar Blockchain</li>
-                                <li>React-Native and React/Redux</li>
-                                <li>Nodejs and microservices approach with RabbitMQ and Kafka</li>
-                                <li>Kubernetes and Rancher orchestration tools for managing the deployment of services into multiple environments </li>
-                                <li>Hashicorp Vault to securely store all the secrets of the back-end services; including encryption keys, DB credentials etc</li>
-                              </ul>
-                            </li>
-                          </ul>
-                      </div>
-									<div class="resume-item border-line-h active">
-										<div class="date">2018(April) - Present</div>
-										<div class="name">Co-Founder and CTO</div>
-                    <div class="company">Coincierge, London UK</div>
-                      <ul>
-                        <li>
-                          Invented the TCL protocol; an on-chain dynamic compliance protocol that verifies the elligibility
-                          of Security Token transfers.
-                        </li>
-                        <li>
-                          Designed and implemented the token sale platform that provides a full plug and play capabilities to support your company with raising funds through 50+ cryptocurrencies and fiat.
-                          <ul>
-                            <li>Automated KYC and AML checks</li>
-                            <li>Multi-sig BTC addresses using xpubs from clients wallet</li>
-                            <li>Ethereum Crowdsale smart contracts</li>
-                            <li>Secure and full back-end service using the microservice approach</li>
-                            <li>Dashboards showing the progress of the ICO and controlling soft and hard
-                              caps</li>
-                            <li>Support and automatic distribution of the tokens after the sale.</li>
-            
-                          </ul>
-                        </li>
-                      </ul>
-									</div>
-									<div class="resume-item border-line-h">
-										<div class="date">2018(Sep) - 2019(Jan)</div>
-										<div class="name">Blockchain Tech Advisor</div>
-										<div class="company">Earth Rewards, London UK</div>
-										<ul>
-                      <li>Constantly evaluating founders’ ideas and coming up with a pragmatic solution that
-                        can work based on the current technologies.</li>
-                      <li>Formed the product team that will deliver the project. Hired developers and designers
-                        based on their capabilities of delivering the solution I designed with the founders.</li>
-                        <li>Representing founders in talks with partners regarding the technical aspects of the
-                          company and the viability of the solution within the new blockchain domain.</li>
-                        <li>Designed the architecture and shaped the technical solution based on the initial ideas
-                          of the founders.</li>  
-                        <li>Advising on all technical aspects needed to build a technology stack within the
-                          environmental tech and blockchain domain.</li>
-                    </ul>
-									</div>
-									<div class="resume-item">
-										<div class="date">2018(Sep) - 2019(Jan)</div>
-										<div class="name">Blockchain Tech Advisor</div>
-										<div class="company">Varius World Tech, London UK</div>
-										<ul>
-                      <li>
-                        Advising on all technical aspects needed to build a technology stack within the casing and gambling domain.
-                      </li>
-                      <li>
-                        Educating founders with generic blockchain knowledge i.e. basic cryptographic principles, crypto wallet management, multisig wallet etc.
-                      </li>
-                      <li>
-                        Constantly evaluating founders’ ideas and coming up with a pragmatic solution that can work based on current technologies.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2018(Jun) - 2018(Sep)</div>
-										<div class="name">Blockchain And Backend Engineer</div>
-                    <div class="company">Lifelabs.io, London UK</div>
-                    <ul>
-                      <li>
-                        Worked closely with the CTO, helping with blockchain related solutions.
-                      </li>
-                      <li>
-                        Implemented the entire notifications system that is used in the Life Wallet. This was a system that followed the microservices approach with several NodeJS services communicating with each other through the choreography pattern backed by a messaging queue.
-                      </li>
-                      <li>
-                        Helped the Junior members of the team with the blockchain related tasks.
-                      </li>
-                      <li>
-                        Contributed to the initial steps of the DevOps infrastructure using Kubernetes.
-                      </li>
-                      <li>
-                        Helped with the Crypto wallet implementation.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2018(Jun) - 2018(Sep)</div>
-										<div class="name">Blockchain And Smart Contract Engineer</div>
-                    <div class="company">Evident Proof, London UK</div>
-                    <ul>
-                      <li>
-                        Created​ ​and deployed the EPT ERC20 token.
-                      </li>
-                      <li>
-                        Created a set of smart contracts for the vesting plans of the companies investors.
-                      </li>
-                      <li>
-                        Implemented a custom web-based Ethereum multisig wallet.
-                      </li>
-                      <li>
-                        Responsible for deploying and distributing the EPT tokens the investors.
-                      </li>
-                      <li>
-                        Deployed and managed the Token Vesting smart contracts that lock the investors EPT
-                        holdings for a particular time and allows them to regularly release part of the entire
-                        fund.
-                      </li>
-                      <li>
-                        Implemented a Restful Api that will engage with the EPT smart contract and perform the actions needed to support the system’s mechanics.
-                      </li>
-                      <li>
-                        Created CLI tools for the company’s developers to allow them easily interact with the multisig wallets, as well as, the token vesting and EPT smart contracts.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2018(Jan) – 2018 (April)</div>
-										<div class="name">Blockchain Advisor and Smart Contract Engineer</div>
-                    <div class="company">The Coinlab, London UK</div>
-                    <ul>
-                      <li>
-                        Running whiteboard sessions with clients helping them structure the tokenomics of their blockchain projects.
-                      </li>
-                      <li>
-                        Creating services around the Bitcoin ecosystem with focus on multisig addresses and secure storage of BTC funds.
-                      </li>
-                      <li>
-                        Worked with technologies such as DApp, Web3j, Stellar, Lisk, Tezos, Hyperledger, EOS, Cardano, decentralized storage (IPFS, DOT protocol), BIP32 wallets.
-                      </li>
-                      <li>
-                        Involved in blockchain projects for companies like Audi, Bosh and several companies in the area of real estate and invoice factoring.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2017(Sep) – 2018(Jan)</div>
-										<div class="name">Technology Lead</div>
-                    <div class="company">Deutsche Bank, London UK</div>
-                    <ul>
-                      <li>
-                        Member of the Digital Asset Management team, shaping the digital transformation initiative by building tools and software.
-                      </li>
-                      <li>
-                        Working along with DB traders designing and implementing automated tools to interact and trade with various counterparties via different means, such as Symphony, Bloomberg etc.
-                      </li>
-                      <li>
-                        Working on various proof of concept projects including technologies such as machine learning classification algorithms for fraud detection and consortium blockchain (Hyperledger) interactions.
-                      </li>
-                      <li>
-                        Building and maintaining the DB JavaScript SDK, currently used by several development teams in Deutsche Bank.
-                      </li>  
-                      <li>
-                        Building cross platform UI components that can be seamlessly integrated in React and React-Native projects.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2016(October) – 2017(Sep) </div>
-										<div class="name">Lead JavaScript Engineer</div>
-                    <div class="company">Lloyds Bank, London UK</div>
-                    <ul>
-                      <li>
-                        Working on the LBG(Lloyds Bank Group) online banking system and the statements page of Lloyds, Halifax and Bank of Scotland specifically.
-                      </li>
-                      <li>
-                        Responsible for getting the ownership of the system from the old team, making thorough knowledge transfer and collecting every piece of information needed to accomplish a smooth transition.
-                      </li>
-                      <li>
-                        Analysing the structure of the code and introducing several layers of abstractions (application, data flow/management, view etc.) to make it easy to reason about.
-                      </li>
-                      <li>
-                        Contributed to the reshaping of the ways of working in the team by advocating the use of agile principles and adapting small batch deliveries.
-                      </li>
-                      <li>
-                        Setting up an entirely new DevOps pipeline to accomplish continuous integration, continuous delivery and continuous deployment. I used Jenkins to perform several tasks, such as static code analysis, integration with Sonar code quality metrics, automated unit and BDD tests, site speed, automated accessibility tests etc.
-                      </li>
-                      <li>
-                        Gradually removed the old flux-like data flow mechanism into a more structured and centralized state management system. This required a thorough knowledge of the application to form the main state object and integrating Redux as a connection between the state and the view layer.
-                      </li>
-                      <li>
-                        Mentoring and teaching junior and senior developers about good practices and patterns in Software engineer and frontend development.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2016(April) – 2016(August) </div>
-										<div class="name">Senior JavaScript Engineer</div>
-                    <div class="company"> Sky, London UK</div>
-                    <ul>
-                      <li>
-                        Lead full-stack JavaScript developer.
-                      </li>
-                      <li>
-                        Part of the NowTV Editorial team implementing a custom CMS for managing the NowTV content.
-                      </li>
-                      <li>
-                        Working on the NowTV MEAN (Angular, MongoDB and NodeJS) stack.
-                      </li>
-                      <li>
-                        Gathering user requirements and creating user stories.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2015(April) – 2016(April)</div>
-										<div class="name">Senior JavaScript Engineer</div>
-                    <div class="company">Football Radar, London UK</div>
-                    <ul>
-                      <li>
-                        Worked in the football betting industry, implementing and maintaining highly performant real time web based systems.
-                      </li>
-                      <li>
-                        Designed and implemented the S​ BS​ web application that has radically changed the way that football watchers collect data. This was a greenfield project with a duration of 6 months. The technology stack that was used includes React, ES6, RxJS, Scala, Thrift endpoints and Symphony.
-                      </li>
-                      <li>
-                        Designed and implemented the S​ upervisor​ application (a greenfield project of 4 months) which is a highly performant real time system that is capable of monitoring the way that watchers input their data. It consists of a middleware written in NodeJS, an Api gateway also in NodeJS, three services written in Scala and the frontend which was implemented using React, Redux, WebSocket and RxJS and written in TypeScript and ES6. The whole system was designed to be compliant with the microservices principles.
-                      </li>
-                      <li>
-                        Worked on the player model application that is being used by the watchers to collect data about individual players. An ongoing project that follows the microservices approach and consists of Scala services and React/Redux frontend written in TypeScript and ES6.
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2014(Feb) – 2015(April) </div>
-										<div class="name">Front-End Developer</div>
-                    <div class="company">Brand View, Reading UK</div>
-                    <ul>
-                      <li>
-                        Designed and implemented h​ttp://www.thegrocer.co.uk/​widgets.
-                      </li>
-                      <li>
-                        Lead Frontend developer for an on-going project to develop a Data Hub platform  using OO JavaScript, AngularJS, ReactJS, CSS3 and C# for API’s. 
-                      </li>
-                      <li>
-                        Lead Frontend developer for a platform to automate Product Mapping using OO JavaScript, asynchronous design patterns and DOM manipulation (jQuery, KnockoutJS).
-                      </li>
-                      <li>
-                        Created a timeline module (named after me) which represents a generic and customizable Gantt-Chart. Built with D3.js
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="resume-item">
-										<div class="date">2012(Oct) – 2014(Feb)</div>
-										<div class="name">Web Developer</div>
-                    <div class="company">Cirrus Logistics, Basingstoke UK</div>
-                    <ul>
-                      <li>
-                        Designed and implemented the set of features (Site Traffic) for the leading warehouse design and simulation tool, CLASS.
-                      </li>
-                      <li>
-                        Redeveloped an existing desktop app into web based application using KnockoutJS, DurandalJS, D3JS and OO JavaScript.
-                      </li>
-                      <li>
-                        Designed and developed the security infrastructure of the company’s web based applications using .NET WIF.
-                      </li>
-                      <li>
-                        Implemented JavaScript 2D and 3D graphics on several projects.
-                      </li>
-                    </ul>
-                  </div>
-								</div>
-							</div>
+      <div class="skill-group">
+        <h4>DevOps &amp; Observability</h4>
+        <div class="skill-tags">
+          <span>Kubernetes</span><span>Docker</span><span>Rancher</span>
+          <span>Prometheus</span><span>Grafana</span><span>Istio</span><span>Jenkins</span>
+        </div>
+      </div>
+    </div>
 
-							<!-- education -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="resume-title border-line-h">
-									<div class="icon"><i class="ion ion-university"></i></div>
-									<div class="name">Education</div>
-								</div>
-								<div class="resume-items">
-									<div class="resume-item border-line-h">
-										<div class="date">2011-2012</div>
-										<div class="name">School of Electronics & Computer Science</div>
-										<div class="company">University of Southampton</div>
-										<p>
-											Distinction in MSc Web technology
-										</p>
-									</div>
-									<div class="resume-item border-line-h">
-										<div class="date">2006-2011</div>
-										<div class="name">Department of Computer Science</div>
-										<div class="company">Aristotle University of Thessaloniki</div>
-										<p>
-											Distinction in BSc Computer Science
-										</p>
-									</div>
-								</div>
-							</div>
+    <div class="sidebar-section">
+      <h3>Education</h3>
+      <div class="edu-item">
+        <div class="degree">MSc Web Technology</div>
+        <div class="school">University of Southampton</div>
+        <div class="year">Distinction · 2012</div>
+      </div>
+      <div class="edu-item">
+        <div class="degree">BSc Computer Science</div>
+        <div class="school">Aristotle University of Thessaloniki</div>
+        <div class="year">Distinction · 2011</div>
+      </div>
+    </div>
 
-							<div class="clear"></div>
-						</div>
+  </aside>
 
-					</div>
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main class="main">
 
-					<!--
-						Skills
-					-->
-					<div class="content skills">
+    <!-- SUMMARY -->
+    <section class="summary">
+      <div class="section-title">Professional Summary</div>
+      <div class="section-rule"></div>
+      <p>
+        Senior technology leader and blockchain specialist with 13+ years of experience designing and shipping
+        production-grade distributed systems across fintech, DeFi, and enterprise environments.
+        Deep expertise in privacy-preserving cryptography — including Fully Homomorphic Encryption, Zero-Knowledge
+        Proofs, and MPC protocols — applied to real-world financial products.
+        Proven track record leading engineering at scale (Sky UK, Lloyds Bank, Deutsche Bank) and founding
+        high-impact blockchain ventures. Equally at home writing low-level Rust and architecting multi-service
+        cloud infrastructure, bridging the gap between protocol design and product delivery.
+      </p>
+    </section>
 
-						<!-- title -->
-						<div class="title">My Skills</div>
+    <!-- EXPERIENCE -->
+    <section>
+      <div class="section-title">Experience</div>
+      <div class="section-rule"></div>
 
-						<!-- content -->
-						<div class="row">
+      <div class="experience">
 
-							<!-- skill item -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="skills-list">
-									<div class="skill-title border-line-h">
-										<div class="icon"><i class="fas fa-cubes"></i></div>
-										<div class="name">Blockchain</div>
-									</div>
-									<ul>
-										<li class="border-line-h"> 
-											<div class="name">Ethereum</div>
-											<div class="progress">
-												<div class="percentage" style="width:95%;"></div>
-											</div>
-                    </li>
-                    <li class="border-line-h"> 
-											<div class="name">HD Wallets</div>
-											<div class="progress">
-												<div class="percentage" style="width:95%;"></div>
-											</div>
-										</li>
-										<li class="border-line-h"> 
-											<div class="name">Bitcoin</div>
-											<div class="progress">
-												<div class="percentage" style="width:95%;"></div>
-											</div>
-										</li>
-                    <li class="border-line-h"> 
-											<div class="name">Smart Contracts</div>
-											<div class="progress">
-												<div class="percentage" style="width:95%;"></div>
-											</div>
-										</li>
-										<li>
-											<div class="name">Cryptographic Primitives</div>
-											<div class="progress">
-												<div class="percentage" style="width:85%;"></div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
+        <!-- Raycash -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Chief Technology Officer</span>
+              <span class="job-period">2025 – Present</span>
+            </div>
+            <div class="job-company">Raycash</div>
+            <ul class="job-bullets">
+              <li>Define and own the technical vision for Raycash — a privacy-first fintech platform combining self-custody blockchain technology with traditional banking products (IBAN, virtual debit card, instant global transfers).</li>
+              <li>Designed and built the entire Rust back-end from the ground up: a Cargo workspace of microservices covering HTTP APIs, blockchain indexers, async queue consumers, real-time WebSocket delivery, and scheduled cron jobs.</li>
+              <li>Implemented confidential token transfer infrastructure using Fully Homomorphic Encryption (FHE), keeping on-chain balances and amounts encrypted at all times while remaining auditable for compliance purposes.</li>
+              <li>Architected a multi-stage AML/KYT compliance pipeline: counterfactual deposit indexer routes ERC-20 transfers through Elliptic transaction risk scoring and ChainAnalysis address screening before funds are wrapped.</li>
+              <li>Integrated KYC onboarding with Wirex/SumSub — covering identity verification, webhook handling, OTP phone confirmation, and status reconciliation flows.</li>
+              <li>Built Wirex managed-flow payment processing: webhook receiver, card transaction lifecycle management, and on-chain settlement via a transaction relayer enabling gasless user flows.</li>
+              <li>Designed and deployed a real-time WebSocket server for in-app push notifications, backed by a queue-driven notification centre.</li>
+              <li>Shipped a fiat on-ramp integration, FUSD balance reconciliation service, and FHE-based balance decryption worker.</li>
+              <li>Established engineering practices, code review standards, CI/CD pipelines, and observability stack (Prometheus + Grafana) across the platform.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Rust · Actix-web · SQLx · PostgreSQL · RabbitMQ · Ethereum/EVM · FHE · Kubernetes · Docker · Prometheus · Grafana</div>
+          </div>
+        </div>
 
-							<!-- skill item -->
-							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
-								<div class="skills-list">
-									<div class="skill-title border-line-h">
-										<div class="icon"><i class="ion ion-code"></i></div>
-										<div class="name">Coding</div>
-									</div>
-									<ul>
-										<li class="border-line-h"> 
-											<div class="name">JavaScript</div>
-											<div class="progress">
-												<div class="percentage" style="width:100%;"></div>
-											</div>
-										</li>
-										<li class="border-line-h"> 
-											<div class="name">NodeJS</div>
-											<div class="progress">
-												<div class="percentage" style="width:100%;"></div>
-											</div>
-										</li>
-										<li class="border-line-h"> 
-											<div class="name">ReactJS</div>
-											<div class="progress">
-												<div class="percentage" style="width:100%;"></div>
-											</div>
-                    </li>
-                    <li class="border-line-h"> 
-											<div class="name">Angular</div>
-											<div class="progress">
-												<div class="percentage" style="width:95%;"></div>
-											</div>
-										</li>
-										<li>
-											<div class="name">Functional Programming</div>
-											<div class="progress">
-												<div class="percentage" style="width:90%;"></div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
+        <!-- Liquid Collective -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Solana Smart Contract Engineer</span>
+              <span class="job-period">Dec 2024 – Mar 2025</span>
+            </div>
+            <div class="job-company">Liquid Collective</div>
+            <ul class="job-bullets">
+              <li>Collaborated on the architecture of a permissioned liquid staking protocol on Solana, working directly with the Solana Foundation throughout the engagement.</li>
+              <li>Forked and extended the official SPL Stake Pool smart contract to support permissioned allowlist-controlled user interactions.</li>
+              <li>Mentored a team with limited Solana ecosystem knowledge, accelerating delivery under a tight deadline.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Rust · Solana · SPL Stake Pool · Anchor</div>
+          </div>
+        </div>
 
-							<div class="clear"></div>
-						</div>
+        <!-- flipmeme -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Lead Blockchain Engineer</span>
+              <span class="job-period">Aug 2024 – Jan 2025</span>
+            </div>
+            <div class="job-company">flipmeme</div>
+            <ul class="job-bullets">
+              <li>Led a team of smart contract developers building a Solana-native bonding curve mechanism for AI-generated NFT sales.</li>
+              <li>Designed and built a Rust-based Solana blockchain indexer and a Rust API layer to serve structured data to the front-end.</li>
+              <li>Defined architecture and implementation plans across multiple product workstreams.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Rust · Solana · Anchor · TypeScript</div>
+          </div>
+        </div>
 
-					</div>
+        <!-- Apocentre -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Founder &amp; CTO</span>
+              <span class="job-period">Jul 2020 – Present</span>
+            </div>
+            <div class="job-company">Apocentre</div>
+            <ul class="job-bullets">
+              <li>Founded and led a blockchain consultancy that delivered 100+ projects for startups across DeFi, NFT, infrastructure, and enterprise blockchain.</li>
+              <li>Authored and deployed smart contracts across Ethereum, Polygon, Arbitrum, Avalanche, BNB Chain, Solana, Sui, and Aptos — collectively handling hundreds of millions of dollars in volume.</li>
+              <li>Integrated multiple cryptocurrencies into the NGRAVE hardware wallet product.</li>
+              <li>Built a custom Cosmos SDK blockchain for MPC operations underpinning a self-custody wallet solution.</li>
+              <li>Developed Zero-Knowledge circuits comparable to Semaphore and Tornado Cash in scope.</li>
+              <li>Created production blockchain indexing services using The Graph and StreamingFast Substreams.</li>
+              <li>Organised and managed a team of full-stack blockchain, web, and mobile engineers.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Rust · Solidity · Move · Ethereum · Solana · Sui · Aptos · Cosmos SDK · The Graph · Substreams · Circom · ZoKrates · Node.js</div>
+          </div>
+        </div>
 
-				</div>
-			</div>
+        <!-- Earth Rewards -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Lead Software Engineer &amp; CTO</span>
+              <span class="job-period">Mar 2019 – Jun 2020</span>
+            </div>
+            <div class="job-company">Earth Rewards</div>
+            <ul class="job-bullets">
+              <li>Sole technical owner of a blockchain loyalty platform: designed and built back-end services, REST APIs, web dashboards, and a React Native mobile app.</li>
+              <li>Authored an on-chain loyalty rewards protocol and smart contracts managing the full token lifecycle.</li>
+              <li>Designed a custom Shopify plugin enabling store owners to launch blockchain-based loyalty programmes.</li>
+              <li>Built SDK integrations allowing third-party platforms to connect to the Earth Rewards loyalty network.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Solidity · Web3.js · React Native · Node.js · Hyperledger Besu · Hyperledger Fabric · Keycloak · RabbitMQ · Kafka · Kubernetes · Prometheus · Grafana · Hashicorp Vault</div>
+          </div>
+        </div>
 
-			<!--
-				Card - Contacts
-			-->
-			<div class="card-inner contacts" id="contacts-card">
-				<div class="card-wrap">
+        <!-- Dappflow -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Lead Software Engineer &amp; CTO</span>
+              <span class="job-period">Apr 2018 – Jun 2020</span>
+            </div>
+            <div class="job-company">Dappflow</div>
+            <ul class="job-bullets">
+              <li>Created the Transfer Checkpoint Layer (TCL) — a blockchain compliance protocol that orchestrates dynamic, upgradeable rules governing the validity of every Security Token ownership transaction.</li>
+              <li>Designed and developed the Dappflow Cabinet: a tokenization platform automating the full lifecycle of Security Tokens using on-chain compliance and identity protocols.</li>
+              <li>Built a one-click DApp deployment and interaction platform lowering the barrier to blockchain adoption for developers.</li>
+              <li>Managed a team of engineers, running sprint planning and delivery across the product.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Solidity · Ethereum · Web3.js · React · Node.js · ERC-20/STO standards</div>
+          </div>
+        </div>
 
-					<!--
-						Conacts Info
-					-->
-					<div class="content contacts">
+        <!-- Coincierge -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Blockchain &amp; Smart Contract Engineer</span>
+              <span class="job-period">Jun 2018 – Sep 2018</span>
+            </div>
+            <div class="job-company">Coincierge</div>
+            <ul class="job-bullets">
+              <li>Created and deployed the EPT ERC-20 token, token vesting contracts, and investor distribution tooling.</li>
+              <li>Implemented a custom web-based Ethereum multisig wallet and CLI tools for internal developer use.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Solidity · Ethereum · Web3.js · ERC-20 · Node.js</div>
+          </div>
+        </div>
 
-						<!-- title -->
-						<div class="title">Get in Touch</div>
+        <!-- Deutsche Bank -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Tech Lead</span>
+              <span class="job-period">Sep 2017 – Jun 2018</span>
+            </div>
+            <div class="job-company">Deutsche Bank — Digital Asset Management</div>
+            <ul class="job-bullets">
+              <li>Built and maintained the DB JavaScript SDK, adopted by multiple internal development teams across the bank.</li>
+              <li>Designed and implemented automated trading tools for DB traders to interact with counterparties via Symphony and Bloomberg APIs.</li>
+              <li>Led POC projects in ML-based fraud detection and Hyperledger consortium blockchain integrations.</li>
+              <li>Created cross-platform UI component libraries for React and React Native.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> TypeScript · JavaScript · React · React Native · Node.js · Hyperledger · Symphony API · Bloomberg API</div>
+          </div>
+        </div>
 
-						<!-- content -->
-						<div class="row">
-							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
-								<div class="map" id="map"></div>
-								<div class="info-list">
-									<ul>
-										<li><strong>Address . . . . .</strong> London, UK</li>
-										<li><strong>Email . . . . .</strong>ppoliani@gmail.com</li>
-										<li><strong>Phone . . . . .</strong> +447702014067</li>
-										<li><strong>Freelance . . . . .</strong> Available</li>
-									</ul>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
+        <!-- Lloyds Bank -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Lead JavaScript Engineer</span>
+              <span class="job-period">Oct 2016 – Sep 2017</span>
+            </div>
+            <div class="job-company">Lloyds Banking Group</div>
+            <ul class="job-bullets">
+              <li>Owned the online banking statements platform across Lloyds, Halifax, and Bank of Scotland, managing a full ownership transfer and knowledge transition from the previous team.</li>
+              <li>Migrated a legacy Flux-based data flow to a centralised Redux state management architecture.</li>
+              <li>Sat on the LBG Frontend Guild governing body, defining standards and good practices adopted across the digital transformation department.</li>
+              <li>Mentored junior and senior engineers; built a scaffolding tool to accelerate project bootstrapping across LBG teams.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> JavaScript · React · Redux · Node.js · CSS3</div>
+          </div>
+        </div>
 
-					</div>
+        <!-- Sky UK -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Senior JavaScript Engineer</span>
+              <span class="job-period">Apr 2016 – Oct 2016</span>
+            </div>
+            <div class="job-company">Sky UK — NowTV Editorial</div>
+            <ul class="job-bullets">
+              <li>Built and maintained a custom CMS for managing NowTV content on the MEAN stack (Angular, MongoDB, Node.js).</li>
+              <li>Resolved front-end and back-end performance bottlenecks; contributed to shared npm packages used across Sky engineering teams.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> Angular · MongoDB · Node.js · Express (MEAN)</div>
+          </div>
+        </div>
 
-					<!--
-						Contact Form
-					-->
-					<!-- <div class="content contacts">
+        <!-- Football Radar -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Senior JavaScript Engineer</span>
+              <span class="job-period">Apr 2015 – Apr 2016</span>
+            </div>
+            <div class="job-company">Football Radar</div>
+            <ul class="job-bullets">
+              <li>Designed and built the SBS data-collection web app from scratch (6 months, greenfield), transforming how football watchers capture match data — React, RxJS, Scala, Thrift.</li>
+              <li>Designed and built the Supervisor real-time monitoring system (4 months, greenfield): Node.js middleware, API gateway, Scala services, React/Redux/WebSocket frontend in TypeScript.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> React · Redux · RxJS · TypeScript · WebSocket · Node.js · Scala · Thrift · Symphony</div>
+          </div>
+        </div>
 
-						<div class="title">Contact Form</div>
+        <!-- Brand View -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div><div class="job-line"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Front-End Developer</span>
+              <span class="job-period">Feb 2014 – Apr 2015</span>
+            </div>
+            <div class="job-company">Brand View</div>
+            <ul class="job-bullets">
+              <li>Led front-end development for a Data Hub platform and a product-mapping automation tool using AngularJS, ReactJS, and C# APIs.</li>
+              <li>Implemented thegrocer.co.uk widgets as lead front-end engineer.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> AngularJS · ReactJS · jQuery · KnockoutJS · C# · JavaScript</div>
+          </div>
+        </div>
 
-						<div class="row">
-							<div class="col col-d-12 col-t-12 col-m-12 border-line-v">
-								<div class="contact_form">
-									<form id="cform" method="post">
-										<div class="row">
-											<div class="col col-d-6 col-t-6 col-m-12">
-												<div class="group-val">
-													<input type="text" name="name" placeholder="Full Name" />
-												</div>
-											</div>
-											<div class="col col-d-6 col-t-6 col-m-12">
-												<div class="group-val">
-													<input type="text" name="email" placeholder="Email Address" />
-												</div>
-											</div>
-											<div class="col col-d-12 col-t-12 col-m-12">
-												<div class="group-val">
-													<textarea name="message" placeholder="Your Message"></textarea>
-												</div>
-											</div>
-										</div>
-										<div class="align-left">
-											<a href="#" class="button" onclick="$('#cform').submit(); return false;">
-												<span class="text">Send Message</span>
-												<span class="arrow"></span>
-											</a>
-										</div>
-									</form>
-									<div class="alert-success">
-										<p>Thanks, your message is sent successfully.</p>
-									</div>
-								</div>
-							</div>
-							<div class="clear"></div>
-						</div>
+        <!-- Cirrus Logistics -->
+        <div class="job">
+          <div class="job-timeline"><div class="job-dot small"></div></div>
+          <div class="job-content">
+            <div class="job-header">
+              <span class="job-title">Web Developer</span>
+              <span class="job-period">Oct 2012 – Feb 2014</span>
+            </div>
+            <div class="job-company">Cirrus Logistics</div>
+            <ul class="job-bullets">
+              <li>Redeveloped the company's flagship warehouse simulation desktop app (CLASS) into a web application using KnockoutJS, DurandalJS, and D3.js.</li>
+              <li>Designed and implemented the security infrastructure for the company's web applications using .NET WIF.</li>
+            </ul>
+            <div class="job-stack"><strong>Stack:</strong> KnockoutJS · DurandalJS · D3.js · .NET WIF · JavaScript · C#</div>
+          </div>
+        </div>
 
-					</div> -->
+      </div>
+    </section>
 
-				</div>
-			</div>
+  </main>
+</div>
 
-		</div>
-	</div>
-	
-	<!--
-		jQuery Scripts
-	-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.validate.js"></script>
-	<script src="js/jquery.magnific-popup.js"></script>
-	<script src="js/imagesloaded.pkgd.js"></script>
-	<script src="js/masonry.pkgd.js"></script>
-	<script src="js/masonry-filter.js"></script>
-	<script src="js/jquery.slimscroll.js"></script>
-	<script src="js/owl.carousel.js"></script>
-	
-	<!--
-		Google map api
-	-->
-	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCYbBZZ_sP5Fm4UN_nrCnikB0q-zihi6H8&sensor=false"></script>
-	
-	<!--
-		Main Scripts
-	-->
-	<script src="js/scripts.js"></script>
-	
 </body>
 </html>
