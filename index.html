@@ -466,6 +466,8 @@
               <li>Designed and deployed a real-time WebSocket server for in-app push notifications, backed by a queue-driven notification centre.</li>
               <li>Shipped a fiat on-ramp integration, FUSD balance reconciliation service, and FHE-based balance decryption worker.</li>
               <li>Established engineering practices, code review standards, CI/CD pipelines, and observability stack (Prometheus + Grafana) across the platform.</li>
+              <li>Designed and launched confidential yield vaults: users shield USDC into FHE-encrypted cUSDC in a single transaction, deposit into a Morpho-backed lending vault, and earn yield — all with balances, amounts, and positions kept encrypted on-chain while remaining auditable for compliance. The architecture plugs into existing DeFi infrastructure without structural modification, demonstrating confidential assets as a drop-in layer.</li>
+              <li>Shipped MCP (Model Context Protocol) server support, exposing Raycash's API as a structured tool surface for LLM agents and third-party developers — enabling AI-driven workflows (balance queries, transfers, compliance checks) and simplifying integration without bespoke API wrappers.</li>
             </ul>
             <div class="job-stack"><strong>Stack:</strong> Rust · Actix-web · SQLx · PostgreSQL · RabbitMQ · Ethereum/EVM · FHE · Kubernetes · Docker · Prometheus · Grafana</div>
           </div>
